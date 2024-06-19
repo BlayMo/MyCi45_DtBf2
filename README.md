@@ -110,14 +110,14 @@ lin 107
 ---
 
 Example of the front end
-![front_1](https://github.com/BlayMo/MyCi45_DtBf2/tree/main/img/front_1.png)
+![front_1](https://github.com/BlayMo/MyCi45_DtBf2/blob/main/img/front_1.png?raw=true)
 
 Example of the Backend
-![admin_1](https://github.com/BlayMo/MyCi45_DtBf2/tree/main/img/admin_1.png)
+![admin_1](https://github.com/BlayMo/MyCi45_DtBf2/blob/main/img/admin_1.png?raw=true)
 
 ---
 
-![admin_2](https://github.com/BlayMo/MyCi45_DtBf2/tree/main/img/admin_2.png)
+![admin_2](https://github.com/BlayMo/MyCi45_DtBf2/blob/main/img/admin_2.png?raw=true)
 
 My respect and thanks to the developers of Ci4, Bonfire2 and Hermawanramadhan.
 All code is subject to improvement and optimization.
