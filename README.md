@@ -45,20 +45,26 @@ I have created for this demo, two tables with fake data: 'Diario' and 'Tipos'.
 **Nota:**  
 After installation, you must make two corrections in: 
 C:\xampp8212\htdocs\MyCi45_DtBf2\app\Config\Filters.php
+
 lin 73 ```'csrf' => ['except' => ['/diario_ss','admin/diario_ss']],```
 
 C:\xampp8212\htdocs\MyCi45_DtBf2\app\Config\Bonfire.php
+
 lin 28 ```
 public $appModules = [
          'App\Modules' => APPPATH . 'Modules',
     ];```
     
 C:\xampp8212\htdocs\MyCi45_DtBf2\themes\Admin\Components\sidebar.php
+
 lin 1 ```href="<?= site_url('home') ?>```
+
 lin 42 ```href="<?= site_url($item->url) ?>">``` 
 
 and C:\xampp8212\htdocs\MyCi45_DtBf2\app\Config\AuthGroups.php
-lin 64 ```public array $permissions = [
+
+lin 64
+```public array $permissions = [
         ...
         'me.security'         => "Can change user's own password",       
         //Modulo Diario
@@ -104,14 +110,14 @@ lin 107
 ---
 
 Example of the front end
-![Ejemplo del Front](C:\xampp8212\htdocs\MyCi45_DtBf2\img\front_1.png)
+![Ejemplo del Front](.\img\front_1.png)
 
 Example of the Backend
-![admin_1](C:\xampp8212\htdocs\MyCi45_DtBf2\img\admin_1.png)
+![admin_1](.\img\admin_1.png)
 
 ---
 
-![admin_2](C:\xampp8212\htdocs\MyCi45_DtBf2\img\admin_2.png)
+![admin_2](.\img\admin_2.png)
 
 My respect and thanks to the developers of Ci4, Bonfire2 and Hermawanramadhan.
 All code is subject to improvement and optimization.
