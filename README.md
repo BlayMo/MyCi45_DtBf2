@@ -64,7 +64,8 @@ lin 42 ```href="<?= site_url($item->url) ?>">```
 and C:\xampp8212\htdocs\MyCi45_DtBf2\app\Config\AuthGroups.php
 
 lin 64
-```        ...
+
+```...
         'me.security'         => "Can change user's own password",       
         //Modulo Diario
         'diario.list'          => 'Can view list of pages',
@@ -79,11 +80,11 @@ lin 64
         'tipos.edit'          => 'Can edit existing pages',
         'tipos.delete'        => 'Can delete existing pages',
     ];
-  ```
+```
 
 lin 107
 
-```public array $matrix = [
+```public
         'superadmin' => [
             ...
             'diario.*',
@@ -107,7 +108,7 @@ lin 107
             'beta.access',
         ],
     ];
-  ```
+```
 
 ---
 
@@ -117,11 +118,12 @@ Example of the front end
 Example of the Backend
 ![admin_1](/img/admin_1.png)
 
----
-
-![admin_2](/img/admin_2.png)
+---![admin_2](/img/admin_2.png)
 
 My respect and thanks to the developers of Ci4, Bonfire2 and Hermawanramadhan.
+
 All code is subject to improvement and optimization.
+
 All developed code is distributed under MIT license.
-June, 202
+
+June, 2024
