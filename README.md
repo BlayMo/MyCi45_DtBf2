@@ -45,18 +45,20 @@ I have created for this demo, two tables with fake data: 'Diario' and 'Tipos'.
 **Nota:**  
 After installation, you must make two corrections in: 
 C:\xampp8212\htdocs\MyCi45_DtBf2\app\Config\Filters.php
-lin 73 `'csrf' => ['except' => ['/diario_ss','admin/diario_ss']],`
+lin 73 ```'csrf' => ['except' => ['/diario_ss','admin/diario_ss']],```
+
 C:\xampp8212\htdocs\MyCi45_DtBf2\app\Config\Bonfire.php
-lin 28 `
+lin 28 ```
 public $appModules = [
          'App\Modules' => APPPATH . 'Modules',
-    ];`
+    ];```
+    
 C:\xampp8212\htdocs\MyCi45_DtBf2\themes\Admin\Components\sidebar.php
-lin 1 `href="<?= site_url('home') ?>`
-lin 42 `href="<?= site_url($item->url) ?>">` 
+lin 1 ```href="<?= site_url('home') ?>```
+lin 42 ```href="<?= site_url($item->url) ?>">``` 
 
 and C:\xampp8212\htdocs\MyCi45_DtBf2\app\Config\AuthGroups.php
-lin 64 `public array $permissions = [
+lin 64 ```public array $permissions = [
         ...
         'me.security'         => "Can change user's own password",       
         //Modulo Diario
@@ -71,9 +73,10 @@ lin 64 `public array $permissions = [
         'tipos.create'        => 'Can create new pages',
         'tipos.edit'          => 'Can edit existing pages',
         'tipos.delete'        => 'Can delete existing pages',
-    ];`
+    ];```
+    
 lin 107
-`public array $matrix = [
+```public array $matrix = [
         'superadmin' => [
             ...
             'diario.*',
@@ -96,7 +99,7 @@ lin 107
         'beta' => [
             'beta.access',
         ],
-    ];`
+    ];```
 
 ---
 
@@ -104,7 +107,6 @@ Example of the front end
 ![Ejemplo del Front](C:\xampp8212\htdocs\MyCi45_DtBf2\img\front_1.png)
 
 Example of the Backend
-
 ![admin_1](C:\xampp8212\htdocs\MyCi45_DtBf2\img\admin_1.png)
 
 ---
