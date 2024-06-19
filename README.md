@@ -50,21 +50,21 @@ lin 73 `'csrf' => ['except' => ['/diario_ss','admin/diario_ss']],`
 
 C:\xampp8212\htdocs\MyCi45_DtBf2\app\Config\Bonfire.php
 
-lin 28 `
+lin 28 ```
 public $appModules = [
          'App\Modules' => APPPATH . 'Modules',
-    ];`
+    ];```
 
 C:\xampp8212\htdocs\MyCi45_DtBf2\themes\Admin\Components\sidebar.php
 
-lin 1 `href="<?= site_url('home') ?>`
+lin 1 ```href="<?= site_url('home') ?>```
 
-lin 42 `href="<?= site_url($item->url) ?>">`
+lin 42 ```href="<?= site_url($item->url) ?>">```
 
 and C:\xampp8212\htdocs\MyCi45_DtBf2\app\Config\AuthGroups.php
 
 lin 64
-`        ...
+```        ...
         'me.security'         => "Can change user's own password",       
         //Modulo Diario
         'diario.list'          => 'Can view list of pages',
@@ -78,11 +78,12 @@ lin 64
         'tipos.create'        => 'Can create new pages',
         'tipos.edit'          => 'Can edit existing pages',
         'tipos.delete'        => 'Can delete existing pages',
-    ];`
+    ];
+  ```
 
 lin 107
 
-`public array $matrix = [
+```public array $matrix = [
         'superadmin' => [
             ...
             'diario.*',
@@ -105,7 +106,8 @@ lin 107
         'beta' => [
             'beta.access',
         ],
-    ];`
+    ];
+  ```
 
 ---
 
