@@ -82,6 +82,7 @@ lin 64
     ];```
     
 lin 107
+
 ```public array $matrix = [
         'superadmin' => [
             ...
@@ -110,14 +111,14 @@ lin 107
 ---
 
 Example of the front end
-![front_1](https://github.com/BlayMo/MyCi45_DtBf2/blob/main/img/front_1.png?raw=true)
+![front_1](/img/front_1.png)
 
 Example of the Backend
-![admin_1](https://github.com/BlayMo/MyCi45_DtBf2/blob/main/img/admin_1.png?raw=true)
+![admin_1](/img/admin_1.png)
 
 ---
 
-![admin_2](https://github.com/BlayMo/MyCi45_DtBf2/blob/main/img/admin_2.png?raw=true)
+![admin_2](/img/admin_2.png)
 
 My respect and thanks to the developers of Ci4, Bonfire2 and Hermawanramadhan.
 All code is subject to improvement and optimization.
