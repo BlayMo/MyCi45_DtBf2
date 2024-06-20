@@ -1,4 +1,4 @@
-# **Codeigniter 4 + Datatables + Bonfire2**
+#Codeigniter 4 + Datatables + Bonfire2
 
 ---
 
@@ -12,7 +12,7 @@ I have created for this demo, two tables with fake data: 'Diario' and 'Tipos'.
 
 ---
 
-##**Installation:**
+##Installation:
 
 - Cloning this project.
 
@@ -28,7 +28,7 @@ I have created for this demo, two tables with fake data: 'Diario' and 'Tipos'.
 
 ---
 
-##**Software used:**
+##Software used:
 
 - Codeigniter 4.5.1
 
@@ -42,7 +42,7 @@ I have created for this demo, two tables with fake data: 'Diario' and 'Tipos'.
 
 ---
 
-##**Note:**  
+##Note:  
 After installation, you must make two corrections in: 
 C:\xampp8212\htdocs\MyCi45_DtBf2\app\Config\Filters.php
 
