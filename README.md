@@ -30,6 +30,8 @@ I have created for this demo, two tables with fake data: 'Diario' and 'Tipos'.
 
 ### Software used:
 
+- php 8.2.12
+
 - Codeigniter 4.5.1
 
 - On the front, the [Startbootstrap](https://startbootstrap.com/template/bare)
@@ -47,26 +49,26 @@ I have created for this demo, two tables with fake data: 'Diario' and 'Tipos'.
 After installation, you must make two corrections in: 
 C:\xampp8212\htdocs\MyCi45_DtBf2\app\Config\Filters.php
 
-lin 73 `'csrf' => ['except' => ['/diario_ss','admin/diario_ss']],`
+lin 73 ```csrf' => ['except' => ['/diario_ss','admin/diario_ss']],```
 
 C:\xampp8212\htdocs\MyCi45_DtBf2\app\Config\Bonfire.php
 
 lin 28 ```
-public $appModules = [
-         'App\Modules' => APPPATH . 'Modules',
-    ];```
+      public $appModules = [
+               'App\Modules' => APPPATH . 'Modules',
+          ];```
 
 C:\xampp8212\htdocs\MyCi45_DtBf2\themes\Admin\Components\sidebar.php
 
-lin 1 ```href="<?= site_url('home') ?>```
-
-lin 42 ```href="<?= site_url($item->url) ?>">```
+lin 1 `href="<?= site_url('home') ?>`
+lin 42 `href="<?= site_url($item->url) ?>">`
 
 and C:\xampp8212\htdocs\MyCi45_DtBf2\app\Config\AuthGroups.php
 
 lin 64
 
-```...
+```php
+        //...
         'me.security'         => "Can change user's own password",       
         //Modulo Diario
         'diario.list'          => 'Can view list of pages',
@@ -85,7 +87,9 @@ lin 64
 
 lin 107
 
-```public
+```php
+    //...
+    public
         'superadmin' => [
             ...
             'diario.*',
