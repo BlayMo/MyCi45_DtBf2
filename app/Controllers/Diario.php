@@ -90,6 +90,7 @@ class Diario extends BaseController {
                         ->join('tipos', 'diario.id_tipo = tipos.id_tipo', 'left')
                         ->orderBy('diario.id_apunte', 'DESC')
                         ->paginate(5, 'diario');
+                $ret = 'home';
             }
             else {
                 $diario = $this->Diario_model
@@ -100,6 +101,7 @@ class Diario extends BaseController {
                         ->orderBy('diario.id_apunte', 'DESC')
                         ->like('diario.concepto', $search)
                         ->paginate(5, 'diario');
+                $ret = 'diario';
             }
 
             $data = array(
@@ -108,10 +110,11 @@ class Diario extends BaseController {
                 'navbar'      => $this->navbar,
                 'botones'     => $this->botones,
                 'pager'       => $this->Diario_model->pager,
+                'search'      => set_value('search',$search),
                 'pagetitle'   => 'Diario'
             );
 
-            $data['retorno'] = 'home';
+            $data['retorno'] = $ret;
             $data['vista']   = 'diario/diario_list';
 
             return view($this->template, $data);

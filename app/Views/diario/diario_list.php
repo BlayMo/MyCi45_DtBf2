@@ -62,7 +62,7 @@
     <div class="card-body">
         <form action="<?= site_url('diario') ?>" class="d-flex mb-2" role="search" method="post">
                     <?= csrf_field() ?>    
-            <input class="form-control me-2" name="search" type="search" placeholder="buscar..." aria-label="Search">
+            <input class="form-control me-2" name="search" type="search" placeholder="buscar..." aria-label="Search" valid="<?=$search?>">
             <button class="btn btn-outline-success" type="submit">Buscar</button>
         </form>
         <div class="table-responsive" style="padding:5px;font-size:80%" >
@@ -78,7 +78,6 @@
                         <th style="text-align:center">Mes</th>
                         <th style="text-align:center">A&ntilde;o</th>
                         <th style="text-align:center">Created At</th>
-
                         <th style="text-align:center" >Opciones</th>
                     </tr>
                 </thead>
@@ -98,10 +97,6 @@
                             <td style="text-align:center" >
                                 <?php
                                 echo anchor(site_url('diario/read/' . $diario->id_apunte), $botones->btn_read);
-                                //echo ' | '; 
-                                //echo anchor(site_url('diario/update/' . $diario->id_apunte), $botones->btn_update);
-                                //echo ' | '; 
-                                //echo anchor(site_url('diario/delete/' . $diario->id_apunte), $botones->btn_delete, 'onclick="javascript: return confirm(\'Are You Sure ?\')"');
                                 ?>
                             </td>
                         </tr>
