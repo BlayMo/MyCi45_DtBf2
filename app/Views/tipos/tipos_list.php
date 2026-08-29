@@ -76,7 +76,7 @@
                     <?php foreach ($tipos_data as $tipos) { ?>
                         <tr>
                             <td style="text-align:center"><?php echo $tipos->id_tipo ?></td>
-                            <td  style="text-align:center" ><?php echo \myhtml_entity_decode($tipos->tipo, ENT_QUOTES | ENT_HTML5, 'UTF-8') ?></td>
+                            <td  style="text-align:center" ><?php echo \myhtml_entity_decode($tipos->tipo) ?></td>
                             <td  style="text-align:center" ><?php echo fecha($tipos->created_at) ?></td>
                             <td style="text-align:center" >
                                 <?php

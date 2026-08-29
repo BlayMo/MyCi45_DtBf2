@@ -2,7 +2,7 @@
 
 namespace Config;
 
-use Bonfire\Auth\Config\Auth as BonfireAuth;
+use Bonfire\Users\Models\UserModel;
 use CodeIgniter\Shield\Authentication\Actions\ActionInterface;
 use CodeIgniter\Shield\Authentication\AuthenticatorInterface;
 use CodeIgniter\Shield\Authentication\Authenticators\AccessTokens;
@@ -14,8 +14,7 @@ use CodeIgniter\Shield\Authentication\Passwords\DictionaryValidator;
 use CodeIgniter\Shield\Authentication\Passwords\NothingPersonalValidator;
 use CodeIgniter\Shield\Authentication\Passwords\PwnedValidator;
 use CodeIgniter\Shield\Authentication\Passwords\ValidatorInterface;
-use Bonfire\Users\Models\UserModel;
-use CodeIgniter\Shield\Config\Auth as ShieldAuth;
+use Bonfire\Auth\Config\Auth as BonfireAuth;
 
 class Auth extends BonfireAuth
 {
@@ -42,8 +41,8 @@ class Auth extends BonfireAuth
         'register'                    => '\Bonfire\Views\Auth\register',
         'forgotPassword'              => '\CodeIgniter\Shield\Views\forgot_password',
         'resetPassword'               => '\CodeIgniter\Shield\Views\reset_password',
-        'action_email_2fa'            => '\CodeIgniter\Shield\Views\email_2fa_show',
-        'action_email_2fa_verify'     => '\CodeIgniter\Shield\Views\email_2fa_verify',
+        'action_email_2fa'            => '\Bonfire\Views\Auth\email_2fa_show',
+        'action_email_2fa_verify'     => '\Bonfire\Views\Auth\email_2fa_verify',
         'action_email_2fa_email'      => '\CodeIgniter\Shield\Views\Email\email_2fa_email',
         'action_email_activate_show'  => '\Bonfire\Views\Auth\email_activate_show',
         'action_email_activate_email' => '\CodeIgniter\Shield\Views\Email\email_activate_email',
@@ -84,9 +83,9 @@ class Auth extends BonfireAuth
      *
      * You must register actions in the order of the actions to be performed.
      *
-     * Available actions with Shield:
-     * - register: \CodeIgniter\Shield\Authentication\Actions\EmailActivator::class
-     * - login:    \CodeIgniter\Shield\Authentication\Actions\Email2FA::class
+     * Available actions with Shield, both extended with Bonfire2 versions:
+     * - register: \Bonfire\Auth\Actions\EmailActivator::class
+     * - login:    \Bonfire\Auth\Actions\Email2FA::class
      *
      * @var array<string, class-string<ActionInterface>|null>
      */
@@ -130,7 +129,7 @@ class Auth extends BonfireAuth
      * when using the 'chain' filter. Each Authenticator listed will be checked.
      * If no match is found, then the next in the chain will be checked.
      *
-     * @var string[]
+     * @var         list<string>
      * @phpstan-var list<string>
      */
     public array $authenticationChain = [
@@ -502,23 +501,13 @@ class Auth extends BonfireAuth
      */
     protected function getUrl(string $url): string
     {
-        // To accommodate all url patterns
-        $final_url = '';
-
-        switch (true) {
-            case strpos($url, 'http://') === 0 || strpos($url, 'https://') === 0: // URL begins with 'http' or 'https'. E.g. http://example.com
-                $final_url = $url;
-                break;
-
-            case route_to($url) !== false: // URL is a named-route
-                $final_url = rtrim(url_to($url), '/ ');
-                break;
-
-            default: // URL is a route (URI path)
-                $final_url = rtrim(site_url($url), '/ ');
-                break;
-        }
-
-        return $final_url;
+        return match (true) {
+            // URL begins with 'http' or 'https'. E.g. http://example.com
+            str_starts_with($url, 'http://') || str_starts_with($url, 'https://') => $url,
+            // URL is a named-route
+            route_to($url) !== false => rtrim(url_to($url), '/ '),
+            // URL is a route (URI path)
+            default => rtrim(site_url($url), '/ '),
+        };
     }
 }

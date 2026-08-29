@@ -47,7 +47,7 @@ if (!isset($diario_list)){
     <body>
         <?php if (has_consent('performing')) : ?>
         <script>
-            <!-- Global Site Tag (gtag.js) - Google Analytics -->
+            //<!-- Global Site Tag (gtag.js) - Google Analytics -->
         </script>
         <?php endif ?>
         

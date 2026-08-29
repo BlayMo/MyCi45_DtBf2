@@ -55,7 +55,6 @@ class Users extends BonfireUsers
      * --------------------------------------------------------------------------
      * relative to FCPATH and base_url
      */
-
     public $avatarDirectory = 'uploads/avatars';
 
     /**
@@ -70,7 +69,8 @@ class Users extends BonfireUsers
      * toolbar avatar size)
      */
     public $avatarResize = false;
-    public $avatarSize = 140;
+
+    public $avatarSize        = 140;
     public $avatarResizeFloor = 32;
 
     /**
@@ -101,6 +101,10 @@ class Users extends BonfireUsers
         'last_name' => [
             'label' => 'Last Name', 'rules' => 'permit_empty|string|min_length[3]',
         ],
+        'groups.*' => [
+            'label' => 'Groups',
+            'rules' => 'required',
+        ],
     ];
 
     /**
@@ -112,28 +116,44 @@ class Users extends BonfireUsers
      * profile page. They are listed first in groups, where the group name is
      * used on the form's fieldset legend.
      *
-     * Each field can have the following values in it's options array:
+     * Each field can have the following values in its options array:
      *  - label: the input label. If one is not provided, the field name will be used.
      *  - type: the type of HTML input used. Should be the simpler inputs,
      *      like text, number, email, url, date, etc., as well as textarea, checkbox.
      *      Selects, radios, etc are not supported.
      *  - validation: a validation rules string. If not present will be 'permit_empty|string'
      * NOTE: if you need labels for fields in validation messages, expand the 'validation'
-     * value into multidimensional array of it's own, with keys 'label' and 'rules',
+     * value into a multidimensional array of its own, with keys 'label' and 'rules',
      * like it is done with 'baz' value below (adding custom error messages is also possible here).
+     *
+     * For example:
+     *
+     * 'Example Fields' => [
+     *     'foo' => ['label' => 'Foo', 'type' => 'text', 'validation' => 'permit_empty|string'],
+     *     'Bar' => ['type' => 'text', 'validation' => 'required|string'],
+     *     'baz' => [
+     *         'label' => 'Baz',
+     *         'type' => 'checkbox',
+     *         'validation' => [
+     *             'label' => 'Baz',
+     *             'rules' => 'permit_empty|in_list[true,false]'
+     *         ],
+     *     ],
+     * ],
      */
     public $metaFields = [
-        //        'Example Fields' => [
-        //            'foo' => ['label' => 'Foo', 'type' => 'text', 'validation' => 'permit_empty|string'],
-        //            'Bar' => ['type' => 'text', 'validation' => 'required|string'],
-        //            'baz' => [
-        //                 'label' => 'Baz',
-        //                 'type' => 'checkbox',
-        //                 'validation' => [
-        //                     'label' => 'Baz',
-        //                     'rules' => 'permit_empty|in_list[true,false]'
-        //                 ],
-        //             ],
-        //        ],
+        'Example Fields' => [
+            'blog' => ['label' => 'Blog', 'type' => 'text', 'validation' => 'permit_empty|valid_url_strict'],
+        ],
+    ];
+
+    /**
+     * --------------------------------------------------------------------------
+     * Search in additional fields
+     * --------------------------------------------------------------------------
+     * To enable search in additional user fields, add the field names to this array.
+     */
+    public $includeMetaFieldsInSearech = [
+        'blog',
     ];
 }

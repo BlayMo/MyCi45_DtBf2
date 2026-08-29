@@ -16,10 +16,10 @@
 if (!function_exists('myhtml_entity_decode')) {
 
 //eliminar el error al pasar un string nulo 
-    function myhtml_entity_decode($string, $flag, $utf) {
+    function myhtml_entity_decode($string) {
         $ret = '';
         if ($string != '') {
-            $ret = html_entity_decode($string, $flag, $utf);
+            $ret = html_entity_decode($string, ENT_QUOTES | ENT_HTML5,  'UTF-8');
         }
 
         return $ret;

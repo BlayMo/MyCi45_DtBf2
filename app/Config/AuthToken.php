@@ -14,7 +14,6 @@ declare(strict_types=1);
 namespace Config;
 
 use Bonfire\Auth\Config\AuthToken as BonfireAuthToken;
-use CodeIgniter\Shield\Config\AuthToken as ShieldAuthToken;
 
 /**
  * Configuration for Token Auth and HMAC Auth

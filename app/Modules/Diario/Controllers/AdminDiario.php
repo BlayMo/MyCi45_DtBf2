@@ -160,13 +160,13 @@ class AdminDiario extends AdminController{
     }
     
     public function listss(){
-        //$acceso = true;
-        $acceso = $this->permisos->canAdmin($this->oUser);
+        $acceso = true;
+//        $acceso = $this->permisos->canAdmin($this->oUser);
         
         if ($acceso) {            
 
             return $this->render($this->camino . 'list_ss', [
-                        'pagetitle'     => 'Diario/Apuntes',
+                        'pagetitle'     => 'Diario/Apuntes SS',
             ]);
         }
         else {

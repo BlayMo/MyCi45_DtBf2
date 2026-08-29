@@ -82,8 +82,8 @@
             <?php foreach ($tipos_data as $tipos) { ?>
             <tr>
                <td style="text-align:center"><?php echo $tipos->id_tipo ?></td>
-               <td  style="text-align:center"><?php echo \myhtml_entity_decode($tipos->tipo, ENT_QUOTES | ENT_HTML5, 'UTF-8') ?></td>
-               <td  style="text-align:center"><?php echo \myhtml_entity_decode($tipos->created_at, ENT_QUOTES | ENT_HTML5, 'UTF-8') ?></td>
+               <td  style="text-align:center"><?php echo \myhtml_entity_decode($tipos->tipo) ?></td>
+               <td  style="text-align:center"><?php echo \myhtml_entity_decode($tipos->created_at) ?></td>
                <td style="text-align:center">
                   <?php
                      echo anchor(site_url(ADMIN_AREA.'/tipos/read/' . $tipos->id_tipo), $botones->btn_read);

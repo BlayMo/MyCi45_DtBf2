@@ -85,13 +85,13 @@
                     <?php foreach ($diario_data as $diario) { ?>
                         <tr>
                             <td style="text-align:center"><?php echo $diario->id_apunte ?></td>
-                            <td  style="text-align:center" ><?php echo \myhtml_entity_decode($diario->id_tipo, ENT_QUOTES | ENT_HTML5, 'UTF-8') ?></td>
-                            <td  style="text-align:center" ><?php echo \myhtml_entity_decode($diario->concepto, ENT_QUOTES | ENT_HTML5, 'UTF-8') ?></td>
+                            <td  style="text-align:center" ><?php echo \myhtml_entity_decode($diario->id_tipo) ?></td>
+                            <td  style="text-align:center" ><?php echo \myhtml_entity_decode($diario->concepto) ?></td>
                             <td  style="text-align:right"><?php echo \numero_es($diario->cobros) ?></td>
                             <td  style="text-align:right"><?php echo \numero_es($diario->pagos) ?></td>
-                            <td  style="text-align:center" ><?php echo \myhtml_entity_decode($diario->dia, ENT_QUOTES | ENT_HTML5, 'UTF-8') ?></td>
-                            <td  style="text-align:center" ><?php echo \myhtml_entity_decode($diario->mes, ENT_QUOTES | ENT_HTML5, 'UTF-8') ?></td>
-                            <td  style="text-align:center" ><?php echo \myhtml_entity_decode($diario->ano, ENT_QUOTES | ENT_HTML5, 'UTF-8') ?></td>
+                            <td  style="text-align:center" ><?php echo \myhtml_entity_decode($diario->dia) ?></td>
+                            <td  style="text-align:center" ><?php echo \myhtml_entity_decode($diario->mes) ?></td>
+                            <td  style="text-align:center" ><?php echo \myhtml_entity_decode($diario->ano) ?></td>
                             <td  style="text-align:center" ><?php echo fecha($diario->created_at) ?></td>
 
                             <td style="text-align:center" >

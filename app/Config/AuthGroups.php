@@ -3,7 +3,6 @@
 namespace Config;
 
 use Bonfire\Auth\Config\AuthGroups as BonfireAuthGroups;
-use CodeIgniter\Shield\Config\AuthGroups as ShieldAuthGroups;
 
 class AuthGroups extends BonfireAuthGroups
 {
@@ -81,7 +80,7 @@ class AuthGroups extends BonfireAuthGroups
         'logs.view'           => 'Can view the logs',
         'logs.manage'         => 'Can manage the logs',
         'me.edit'             => "Can edit user's own settings",
-        'me.security'         => "Can change user's own password",       
+        'me.security'         => "Can change user's own password",
         //Modulo Diario
         'diario.list'          => 'Can view list of pages',
         'diario.view'          => 'Can view pages details',
@@ -155,8 +154,8 @@ class AuthGroups extends BonfireAuthGroups
             'tipos.*'
         ],
         'user' => [
-             'diario.list',
-             'tipos.list'
+            'diario.list',
+            'tipos.list'
         ],
         'beta' => [
             'beta.access',
